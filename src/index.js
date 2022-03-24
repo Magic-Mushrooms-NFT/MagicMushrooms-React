@@ -2,9 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Mint from './Pages/Mint';
+import Team from './Pages/Team';
 import ResponsiveMenu from 'react-responsive-navbar';
 import reportWebVitals from './reportWebVitals';
 import styled from 'styled-components';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
 
 /*
   New customized tag for Navbar (responsiveMenu)
@@ -65,33 +75,40 @@ const Menu = styled.div`
 
 ReactDOM.render(
   <React.StrictMode>
-    <ResponsiveMenu
-        menuOpenButton={<div />}
-        menuCloseButton={<div />}
-        changeMenuOn="500px"
-        largeMenuClassName="large-menu-classname"
-        smallMenuClassName="small-menu-classname"
-        menu={
-          <Menu>
-            <ul>
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>About</a>
-              </li>
-              <li>
-                <a>Mint</a>
-              </li>
-              <li>
-                <a>Team</a>
-              </li>
-              <button>Connect<br/>Wallet</button>
-            </ul>
-          </Menu>
-        }
-      />
-    <App />
+    <Router>
+      <ResponsiveMenu
+          menuOpenButton={<div />}
+          menuCloseButton={<div />}
+          changeMenuOn="500px"
+          largeMenuClassName="large-menu-classname"
+          smallMenuClassName="small-menu-classname"
+          menu={
+            <Menu>
+              <ul>
+                <li>
+                  <Link to='/'>Home</Link>
+                </li>
+                <li>
+                  <Link to='/About'>About</Link>
+                </li>
+                <li>
+                  <Link to='/Mint'>Mint</Link>
+                </li>
+                <li>
+                  <Link to='/Team'>Team</Link>
+                </li>
+                <button>Connect<br/>Wallet</button>
+              </ul>
+            </Menu>
+          }
+        />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/About' element={<About />} />
+        <Route path='/Mint' element={<Mint />} />
+        <Route path='/Team' element={<Team />} />
+      </Routes>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
