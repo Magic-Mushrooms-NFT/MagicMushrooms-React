@@ -28,7 +28,7 @@ const Menu = styled.div`
     font-size: 20px;
     color: MediumPurple;
     &:hover {
-      color: white;
+      color: burlywood;
       font-weight: 500;
     }
   }

@@ -1,0 +1,14 @@
+.teamTitle {
+  color: burlywood;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 75px;
+}

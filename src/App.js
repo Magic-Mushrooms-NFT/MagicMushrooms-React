@@ -1,8 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Profile from './Profile';
-import Team from './Team';
+import Profile from './Components/Profile';
+import Team from './Pages/Team';
 
 
 class App extends React.Component {
@@ -14,9 +14,7 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <Team >
-
-        </Team>
+        <Team />
       </div>
     );
   }
