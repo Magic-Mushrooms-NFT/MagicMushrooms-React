@@ -8,13 +8,10 @@ class Profile extends React.Component {
   }
 
   render(){
-
-    const picture = require('./ElephantNFT.jpeg')
-
     return(
       <div>
         <Box>
-          <img src={picture} />
+          <img src={this.props.pic} />
           <h1>{this.props.name}</h1>
           <h2>{this.props.role}</h2>
         </Box>
@@ -49,12 +46,6 @@ const Box = styled.div`
   h2 {
     font-weight: 100;
     text-align: center;
-  }
-
-  p {
-    text-align: center;
-    font-size: 20pt;
-    margin-top: 10px;
   }
 `;
 
