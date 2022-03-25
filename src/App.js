@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import Profile from './Components/Profile';
 import Team from './Pages/Team';
 
 
