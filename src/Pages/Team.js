@@ -12,11 +12,11 @@ class Team extends React.Component {
 
   render(){
     return (
-      <div>
+      <div >
         <h1 className='teamTitle'>The Magic Mushroom Team!</h1>
         <div className='container'>
-          <Profile className='item' pic={elephant} name='Daniel Leavitt' role='Full stack developer'/>
-          <Profile className='item' pic={garden} name='Cambria DeVries' role='Artist & Front end developer' />
+          <Profile pic={elephant} name='Daniel Leavitt' role='Full stack developer'/>
+          <Profile pic={garden} name='Cambria DeVries' role='Artist & Front end developer' />
         </div>
       </div>
     )

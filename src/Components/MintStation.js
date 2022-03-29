@@ -11,7 +11,7 @@ class MintStation extends React.Component {
   render(){
 
     let key = '0x23de75afaf2844006de4305aaa345a3a4c470a0334f98dfe417d95ae8cce4b83';
-    let provider = ethers.getDefaultProvider();
+    let provider = new ethers.providers.JsonRpcProvider(process.env.MATIC_RPC_PROVIDER);
     let walletWithProvider = new ethers.Wallet(key, provider);
 
     let abi = [

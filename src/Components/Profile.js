@@ -3,9 +3,7 @@ import styled from 'styled-components';
 
 
 class Profile extends React.Component {
-  constructor(props){
-    super(props);
-  }
+  
 
   render(){
     return(

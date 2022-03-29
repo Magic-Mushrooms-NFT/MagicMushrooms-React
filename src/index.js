@@ -22,6 +22,10 @@ import {
 const Menu = styled.div`
   
   border-bottom: 2px solid MediumPurple;
+  background-color: silver;
+  text-align: center;
+  
+  margin-top: 0px;
   
   ul {
     padding: 0;
@@ -42,27 +46,7 @@ const Menu = styled.div`
       font-weight: 500;
     }
   }
-  button {
-    background-color: #A5CD7D;
-    border: solid;
-    border-color: #508476;
-    color: #508476;
-    padding: 10px 20px;
-    margin-left: 27%;
-    position: absolute;
-    border-radius: 15px;
-    text-align: center;
-    text-decoration: none;
-    // display: inline-block;
-    font-size: 16px;
-    font-family: monospace;
-
-    &:hover {
-      color: white;
-      font-weight: 300;
-      border: 2px solid #508476;
-    }
-  }
+  
   @media (max-width: 500px) {
     padding: 10px 0;
     li {
@@ -76,34 +60,25 @@ const Menu = styled.div`
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <ResponsiveMenu
-          menuOpenButton={<div />}
-          menuCloseButton={<div />}
-          changeMenuOn="500px"
-          largeMenuClassName="large-menu-classname"
-          smallMenuClassName="small-menu-classname"
-          menu={
-            <Menu>
-              <ul>
-                <li>
-                  <Link to='/'>Home</Link>
-                </li>
-                <li>
-                  <Link to='/About'>About</Link>
-                </li>
-                <li>
-                  <Link to='/Mint'>Mint</Link>
-                </li>
-                <li>
-                  <Link to='/Team'>Team</Link>
-                </li>
-                <button>Connect<br/>Wallet</button>
-              </ul>
-            </Menu>
-          }
-        />
+    <Menu>
+      <ul>
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/About'>About</Link>
+        </li>
+        <li>
+          <Link to='/Mint'>Mint</Link>
+        </li>
+        <li>
+          <Link to='/Team'>Team</Link>
+        </li>
+        {/* <button>Connect<br/>Wallet</button> */}
+      </ul>
+    </Menu>
       <Routes>
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<Home className='home'/>} />
         <Route path='/About' element={<About />} />
         <Route path='/Mint' element={<Mint />} />
         <Route path='/Team' element={<Team />} />
