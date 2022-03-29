@@ -16,7 +16,7 @@ class Team extends React.Component {
         <h1 className='teamTitle'>The Magic Mushroom Team!</h1>
         <div className='container'>
           <Profile pic={elephant} name='Daniel Leavitt' role='Full stack developer'/>
-          <Profile pic={garden} name='Cambria DeVries' role='Artist & Front end developer' />
+          <Profile pic={garden} name='Cambria Vries' role='Artist & Front end developer' />
         </div>
       </div>
     )
