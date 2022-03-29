@@ -6,7 +6,6 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Mint from './Pages/Mint';
 import Team from './Pages/Team';
-import ResponsiveMenu from 'react-responsive-navbar';
 import reportWebVitals from './reportWebVitals';
 import styled from 'styled-components';
 import {
