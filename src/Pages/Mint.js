@@ -17,8 +17,8 @@ class Mint extends React.Component {
 
     return (
       <div className='container1'>
-        <MintStation style="grid-cloumn: 2;" gif={gif}/>
-        <Account className='account' />
+        <MintStation gif={gif}/>
+        <Account />
       </div>
     )
   }

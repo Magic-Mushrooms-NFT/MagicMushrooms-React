@@ -1,7 +1,6 @@
 import React from 'react';
 import { ethers } from "ethers"; 
 import styled from 'styled-components';
-import { editableInputTypes } from '@testing-library/user-event/dist/utils';
 
 class Account extends React.Component {
   constructor(props){
@@ -50,17 +49,23 @@ class Account extends React.Component {
       }
     }
 
+    const disconnectWallet = async () => {
+
+    }
+
     if(!this.state.signedIn){
       return(
         <div>
-          <button onClick={connectWallet}>Connect Wallet</button>
+          <Address2>
+            <button onClick={connectWallet}>Connect Wallet</button>
+          </Address2>
         </div>
       )
     }else{
       return(
         <div>
           <Address>
-            <button>Disconnect</button>
+            {/* <button onClick={disconnectWallet}>Disconnect</button> */}
             <h1>Address:</h1>
             
             <p>{this.state.address}</p>
@@ -96,10 +101,28 @@ const Address = styled.div`
   p {
     text-align: center;
   }
+`;
+
+const Address2 = styled.div`
+  width: 400px;
+  height: 150px;
+  border: 3px solid #508476;
+  border-radius: 15px;
+  padding-left: 10px;
+
+  text-align: center;
+
+  background-color: #686D95;
 
   button {
-    position: absolute;
-    margin-left: 200px;
+    width: 200px;
+    height: 50px;
+    border-radius: 60px;
+    background-color: burlywood;
+    border: 3px solid #508476;
+    font-size: 20px;
+    font-family: monospace;
+    margin-top: 50px;
   }
 `;
 

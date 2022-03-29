@@ -9,12 +9,32 @@ class MintStation extends React.Component {
   }
 
   render(){
+
+    let key = '0x23de75afaf2844006de4305aaa345a3a4c470a0334f98dfe417d95ae8cce4b83';
+    let provider = ethers.getDefaultProvider();
+    let walletWithProvider = new ethers.Wallet(key, provider);
+
+    let abi = [
+      "function mintMushroom(address _minter) public onlyOwner returns (uint256)",
+      "event Minted(address _minter, uint256 _tokenID)"
+    ];
+    let contractAddress = '0x6f02F1d1dC4Cb2E2514C6cB41364658d21E285E7';
+    let contract = new ethers.Contract(contractAddress, abi, walletWithProvider);
+
+    const mintNFT = async () => {
+      console.log(walletWithProvider.address);
+      let tx = await contract.mintMushroom(walletWithProvider.address);
+      console.log(tx.hash);
+      await tx.wait();
+      console.log("Transaction finished")
+    }
+
     return(
       <div>
         <Station>
           <img src={this.props.gif} />
           <h2>Price: 20 ETH</h2>
-          <button>Mint NFT</button>
+          <button onClick={mintNFT}>Mint NFT</button>
         </Station>
       </div>
     )

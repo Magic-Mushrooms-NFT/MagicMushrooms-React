@@ -1,11 +1,8 @@
 .container1 {
-  display: grid;
-  grid-column: 100px auto 200px;
-  grid-row: auto auto;
-}
-
-.mintStation {
-  grid-column: 1;
-  grid-row: 1;
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  /* grid-column: 100px auto 200px;
+  grid-row: auto auto; */
 }
 
