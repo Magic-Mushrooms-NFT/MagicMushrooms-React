@@ -1,5 +1,5 @@
 import React from 'react';
-import { ethers, providers } from "ethers"; 
+import { Contract, ethers, providers } from "ethers"; 
 import styled from 'styled-components';
 
 class MintStation extends React.Component {
@@ -442,14 +442,12 @@ class MintStation extends React.Component {
       }
     ];
     let contractAddress = '0x6f02F1d1dC4Cb2E2514C6cB41364658d21E285E7';
-    let contract = new ethers.Contract(contractAddress, abi, walletWithProvider);
 
     const mintNFT = async () => {
-      console.log(walletWithProvider.address);
-      let tx = contract.mintMushroom(walletWithProvider.address);
-      console.log(tx.hash);
-      // await tx.wait();
-      console.log("Transaction finished")
+      const writeContract = new Contract(contractAddress, abi, walletWithProvider);
+      const tx = await writeContract.mintMushroom(walletWithProvider.address);
+      const txReceipt = await tx.wait();
+      console.log(txReceipt);
     }
 
     return(
