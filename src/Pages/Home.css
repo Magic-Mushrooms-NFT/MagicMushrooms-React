@@ -3,4 +3,10 @@
     src: url("../fonts/Nectarine/NectarineDemoRegular-Ea6le.ttf");
 }
 
+.logo {
+    font-family: "Nectarine";
+    font-size: 36;
+    color:darkviolet;
+}
+
 
