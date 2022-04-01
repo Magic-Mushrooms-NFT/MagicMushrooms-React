@@ -5,6 +5,7 @@ import styled from 'styled-components';
 class MintStation extends React.Component {
   constructor(props){
     super(props);
+    
 
   }
 
@@ -444,10 +445,15 @@ class MintStation extends React.Component {
     let contractAddress = '0x6f02F1d1dC4Cb2E2514C6cB41364658d21E285E7';
 
     const mintNFT = async () => {
-      const writeContract = new Contract(contractAddress, abi, walletWithProvider);
-      const tx = await writeContract.mintMushroom(walletWithProvider.address);
-      const txReceipt = await tx.wait();
-      console.log(txReceipt);
+      if(this.props.address){
+        console.log("Minter address: "+this.props.address);
+        const writeContract = new Contract(contractAddress, abi, walletWithProvider);
+        const tx = await writeContract.mintMushroom(this.props.address);
+        const txReceipt = await tx.wait();
+        console.log(txReceipt);
+      }else{
+        alert("Please connect your wallet");
+      }
     }
 
     return(

@@ -9,16 +9,21 @@ class Mint extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      address: ''
+      address: null
     }
   }
 
-  render() {
+  getAddress = (accountData) => {
+    this.setState({
+      address: accountData
+    })
+  }
 
+  render() {
     return (
       <div className='container1'>
-        <MintStation gif={gif}/>
-        <Account />
+        <MintStation gif={gif} address={this.state.address}/>
+        <Account updateAddress={this.getAddress}/>
       </div>
     )
   }
