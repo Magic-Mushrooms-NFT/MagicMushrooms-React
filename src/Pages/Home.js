@@ -1,5 +1,6 @@
 import React from 'react';
-
+import './fonts/Nectarine/NectarineDemoRegular-Ea6le.ttf';
+import './Home.css';
 class Home extends React.Component {
   constructor(props){
     super(props);
@@ -8,7 +9,9 @@ class Home extends React.Component {
   render() {
     return (
       <div >
-        Home
+        <div class="Logo">
+
+        </div>
       </div>
     )
   }
