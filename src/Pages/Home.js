@@ -1,5 +1,5 @@
 import React from 'react';
-import './fonts/Nectarine/NectarineDemoRegular-Ea6le.ttf';
+import '../fonts/Nectarine/NectarineDemoRegular-Ea6le.ttf';
 import './Home.css';
 class Home extends React.Component {
   constructor(props){
@@ -9,8 +9,8 @@ class Home extends React.Component {
   render() {
     return (
       <div >
-        <div class="Logo">
-
+        <div>
+          Magic Mushrooms
         </div>
       </div>
     )
